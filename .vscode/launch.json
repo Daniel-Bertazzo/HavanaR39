@@ -1,0 +1,28 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Havana Server",
+            "request": "launch",
+            "mainClass": "org.alexdev.havana.Havana",
+            "projectName": "Havana-Server"
+        },
+        {
+            "type": "java",
+            "name": "Havana Web",
+            "request": "launch",
+            "mainClass": "org.alexdev.http.HavanaWeb",
+            "projectName": "Havana-Web"
+        }
+    ]
+}
