@@ -37,7 +37,7 @@
 		<!-- <a href="{{ site.sitePath }}/{{ site.housekeepingPath }}/articles/create" class="list-group-item list-group-item-action {{ createArticlesActive }}">Post News Article</a> -->
 		{% endif %}
 		
-		{% if housekeepingManager.hasPermission(playerDetails.getRank(), 'users/create') %}
+		{% if housekeepingManager.hasPermission(playerDetails.getRank(), 'user/create') %}
         <a href="{{ site.sitePath }}/{{ site.housekeepingPath }}/users/search" class="list-group-item list-group-item-action {{ searchUsersActive }}">Search Users</a>
 		<a href="{{ site.sitePath }}/{{ site.housekeepingPath }}/users/create" class="list-group-item list-group-item-action {{ createUserActive }}">Create New User</a>
 		{% endif %}
