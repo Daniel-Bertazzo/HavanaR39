@@ -1,6 +1,7 @@
 {% include "housekeeping/base/header.tpl" %}
   <body>
 	{% set dashboardActive = " active " %}
+	{% set dashboardMainActive = " active " %}
 	{% include "housekeeping/base/navigation.tpl" %}
      <h1 class="mt-4">Hotel Statistics</h1>
 		  <p>Welcome to the housekeeping for {{ site.siteName }} Hotel, here you can manage a lot of things at once, such as users, news, site content and view the statistics of the hotel.</p>
@@ -88,7 +89,7 @@
 				{% for player in players %}
                 <tr>
                   <td>{{ player.id }}</td>
-                  <td><a href="{{ site.sitePath }}/{{ site.housekeepingPath }}/users/edit?id={{ player.id }}">{{ player.name }}</a> - <a href="{{ site.sitePath }}/{{ site.housekeepingPath }}/transaction/lookup?searchQuery={{ player.getName() }}">Transactons</a></td>
+                  <td><a href="{{ site.sitePath }}/{{ site.housekeepingPath }}/users/edit?id={{ player.id }}">{{ player.name }}</a> - <a href="{{ site.sitePath }}/{{ site.housekeepingPath }}/transaction/lookup?searchQuery={{ player.getName() }}">Transactions</a></td>
 				  <td>{{ player.email }}</td>
 				  <td><img src="{{ site.habboImagingPath }}/habbo-imaging/avatarimage?figure={{ player.figure }}&size=s"></td>
                   <td>{{ player.motto }}</td>

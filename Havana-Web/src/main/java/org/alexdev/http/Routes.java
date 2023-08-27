@@ -343,5 +343,6 @@ public class Routes {
         RouteManager.addRoute("/" + HOUSEKEEPING_PATH + "/badges/create", HousekeepingBadgesController::create);
         RouteManager.addRoute("/" + HOUSEKEEPING_PATH + "/badges/wipe", HousekeepingBadgesController::wipe);
         RouteManager.addRoute("/" + HOUSEKEEPING_PATH + "/catalogue/edit_frontpage", HousekeepingCatalogueFrontpageController::edit);
+        RouteManager.addRoute("/" + HOUSEKEEPING_PATH + "/test_one", HousekeepingTestController::test_one);
     }
 }
