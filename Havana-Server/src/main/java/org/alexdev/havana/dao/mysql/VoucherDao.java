@@ -133,4 +133,28 @@ public class VoucherDao {
             Storage.closeSilently(sqlConnection);
         }
     }
+
+    public static void createVoucher(String voucherCode, int numberOfCoins) {
+
+        Connection sqlConnection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+
+        try {
+            sqlConnection = Storage.getStorage().getConnection();
+
+            preparedStatement = Storage.getStorage().prepare("INSERT INTO vouchers (voucher_code, credits) VALUES (?, ?)", sqlConnection);
+            preparedStatement.setString(1, voucherCode);
+            preparedStatement.setInt(2, numberOfCoins);
+
+            resultSet = preparedStatement.executeQuery();
+
+        } catch (Exception e) {
+            Storage.logError(e);
+        } finally {
+            Storage.closeSilently(resultSet);
+            Storage.closeSilently(preparedStatement);
+            Storage.closeSilently(sqlConnection);
+        }
+    }
 }

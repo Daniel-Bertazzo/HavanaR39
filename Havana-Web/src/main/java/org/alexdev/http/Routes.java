@@ -307,6 +307,7 @@ public class Routes {
         RouteManager.addRoute("/api/discord", DiscordController::verify);
 
         // Housekeeping
+        // HOUSEKEEPING_PATH = "allseeingeye/hk";
         RouteManager.addRoute("/" + HOUSEKEEPING_PATH + "", HousekeepingController::dashboard);
         RouteManager.addRoute("/" + HOUSEKEEPING_PATH + "/", HousekeepingController::dashboard);
         RouteManager.addRoute("/" + HOUSEKEEPING_PATH + "/login", HousekeepingController::login);
@@ -343,6 +344,7 @@ public class Routes {
         RouteManager.addRoute("/" + HOUSEKEEPING_PATH + "/badges/create", HousekeepingBadgesController::create);
         RouteManager.addRoute("/" + HOUSEKEEPING_PATH + "/badges/wipe", HousekeepingBadgesController::wipe);
         RouteManager.addRoute("/" + HOUSEKEEPING_PATH + "/catalogue/edit_frontpage", HousekeepingCatalogueFrontpageController::edit);
-        RouteManager.addRoute("/" + HOUSEKEEPING_PATH + "/test_one", HousekeepingTestController::test_one);
+        RouteManager.addRoute("/" + HOUSEKEEPING_PATH + "/credits", HousekeepingCreditsController::credits);
+        RouteManager.addRoute("/" + HOUSEKEEPING_PATH + "/vouchers", HousekeepingCreditsController::vouchers);
     }
 }

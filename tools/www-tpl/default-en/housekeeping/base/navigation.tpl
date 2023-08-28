@@ -41,9 +41,9 @@
         <a href="{{ site.sitePath }}/{{ site.housekeepingPath }}/users/search" class="list-group-item list-group-item-action {{ searchUsersActive }}">Search Users</a>
 		    <a href="{{ site.sitePath }}/{{ site.housekeepingPath }}/users/create" class="list-group-item list-group-item-action {{ createUserActive }}">Create New User</a>
 		{% endif %}
-		
-		{% if housekeepingManager.hasPermission(playerDetails.getRank(), 'transaction/lookup') %}
-        <a href="{{ site.sitePath }}/{{ site.housekeepingPath }}/transaction/lookup" class="list-group-item list-group-item-action {{ searchTransactionsActive }}">Transaction Lookup</a>
+
+    {% if housekeepingManager.hasPermission(playerDetails.getRank(), 'credits') %}
+        <a href="{{ site.sitePath }}/{{ site.housekeepingPath }}/credits" class="list-group-item list-group-item-action {{ creditsActive }}">Credits</a>
 		{% endif %}
 		
 		{% if housekeepingManager.hasPermission(playerDetails.getRank(), 'catalogue/edit_frontpage') %}
@@ -56,23 +56,24 @@
       <button class="btn btn-primary" id="menu-toggle">Toggle Menu</button>
 
       <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-        {% if dashboardActive %}
+      
+        {% if creditsActive %}
             <ul class="nav nav-pills">
               <li class="nav-item">
-                <a class="nav-link {{ dashboardMainActive }}" aria-current="page" href="{{ site.sitePath }}/{{ site.housekeepingPath }}">Dashboard main</a>
+                <a class="nav-link {{ creditsMainActive }}" aria-current="page" href="{{ site.sitePath }}/{{ site.housekeepingPath }}/credits">Credits</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link {{ testOneActive }}" href="{{ site.sitePath }}/{{ site.housekeepingPath }}/test_one">User management</a>
+                <a class="nav-link {{ creditsVouchersActive }}" href="{{ site.sitePath }}/{{ site.housekeepingPath }}/vouchers">Voucher management</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Voucher management</a>
+                <a class="nav-link {{ creditsTransactionsActive }}" href="{{ site.sitePath }}/{{ site.housekeepingPath }}/transaction/lookup">Transaction Logs</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Server management</a>
+                <a class="nav-link" href="#">Give Credits / Pixels</a>
               </li>
             </ul>
         {% endif %}
-
+      
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
             <li class="nav-item active">

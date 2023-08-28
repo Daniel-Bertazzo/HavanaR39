@@ -97,7 +97,7 @@
                   <td>{{ player.pixels }}</td>
 				  <td>{{ player.formatLastOnline("dd-MM-yyyy HH:mm:ss") }}</td>
 				  <td>{{ player.formatJoinDate("dd-MM-yyyy HH:mm:ss") }}</td>
-				  <td><a href="{{ site.sitePath }}/{{ site.housekeepingPath }}/api/ban?username={{ player.name }}"><button type="button" class="btn btn-success">Permanently Ban User</button></a></td>
+				  <td><a href="{{ site.sitePath }}/{{ site.housekeepingPath }}/api/ban?username={{ player.name }}"><button type="button" class="btn btn-danger">Permanently Ban User</button></a></td>
                 </tr>
 			   {% set num = num + 1 %}
 			   {% endfor %}
