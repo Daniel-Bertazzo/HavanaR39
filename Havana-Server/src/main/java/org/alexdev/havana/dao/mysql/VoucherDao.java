@@ -143,9 +143,10 @@ public class VoucherDao {
         try {
             sqlConnection = Storage.getStorage().getConnection();
 
-            preparedStatement = Storage.getStorage().prepare("INSERT INTO vouchers (voucher_code, credits) VALUES (?, ?)", sqlConnection);
+            preparedStatement = Storage.getStorage().prepare("INSERT INTO vouchers (voucher_code, credits, allow_new_users) VALUES (?, ?, ?)", sqlConnection);
             preparedStatement.setString(1, voucherCode);
             preparedStatement.setInt(2, numberOfCoins);
+            preparedStatement.setInt(3, 1);
 
             resultSet = preparedStatement.executeQuery();
 

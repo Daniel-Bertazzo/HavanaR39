@@ -48,7 +48,7 @@ public class HousekeepingCreditsController {
         }
 
         if (client.post().queries().size() > 0) {
-            String[] fieldCheck = new String[]{"numberOfCoins", "voucherCode"};
+            String[] fieldCheck = new String[]{"amount", "voucherCode"};
 
             for (String field : fieldCheck) {
                 if (client.post().contains(field) && client.post().getString(field).length() > 0) {
@@ -65,15 +65,15 @@ public class HousekeepingCreditsController {
             }
 
             String voucherCode = client.post().getString("voucherCode");
-            int numberOfCoins = client.post().getInt("numberOfCoins");
+            int amount = client.post().getInt("amount");
 
-            VoucherDao.createVoucher(voucherCode, numberOfCoins);
+            VoucherDao.createVoucher(voucherCode, amount);
         }
 
-        int daniel = 24;
+        int initialVoucher = 24;
 
         tpl.set("pageName", "Voucher Management");
-        tpl.set("initialVoucher", daniel);
+        tpl.set("initialVoucher", initialVoucher);
         tpl.render();
 
         // Delete alert after it's been rendered
