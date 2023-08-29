@@ -1,7 +1,6 @@
 {% include "housekeeping/base/header.tpl" %}
   <body>
-    {% set creditsActive = " active " %}
-    {% set creditsTransactionsActive = " active " %}
+    {% set searchTransactionsActive = " active " %}
 	{% include "housekeeping/base/navigation.tpl" %}
      <h1 class="mt-4">Transaction Lookup</h1>
 		{% include "housekeeping/base/alert.tpl" %}

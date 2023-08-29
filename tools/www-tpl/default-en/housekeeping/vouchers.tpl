@@ -21,37 +21,8 @@
 		<br>
 		<hr />
 		<h2>Existing vouchers</h2>
-		<div style="margin:10px">
-			<div class="table-responsive">
-				<table class="table table-striped">
-					<thead>
-						<tr>
-							<th>Voucher code</th>
-							<th>Amount</th>
-						</tr>
-					</thead>
-					<tbody>
-						{% set num = 1 %}
-						{% for player in players %}
-						<tr>
-						<td>{{ player.id }}</td>
-						<td><a href="{{ site.sitePath }}/{{ site.housekeepingPath }}/users/edit?id={{ player.id }}">{{ player.name }}</a> - <a href="{{ site.sitePath }}/{{ site.housekeepingPath }}/transaction/lookup?searchQuery={{ player.getName() }}">Transactions</a></td>
-						<td>{{ player.email }}</td>
-						<td><img src="{{ site.habboImagingPath }}/habbo-imaging/avatarimage?figure={{ player.figure }}&size=s"></td>
-						<td>{{ player.motto }}</td>
-						<td>{{ player.credits }}</td>
-						<td>{{ player.pixels }}</td>
-						<td>{{ player.formatLastOnline("dd-MM-yyyy HH:mm:ss") }}</td>
-						<td>{{ player.formatJoinDate("dd-MM-yyyy HH:mm:ss") }}</td>
-						<td><a href="{{ site.sitePath }}/{{ site.housekeepingPath }}/api/ban?username={{ player.name }}"><button type="button" class="btn btn-danger">Permanently Ban User</button></a></td>
-						</tr>
-						{% set num = num + 1 %}
-						{% endfor %}
-					</tbody>
-				</table>
-			</div>
-		</div>
-
+		<p>TODO</p>
+		<!-- TODO - Show existing vouchers -->
   <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
   <script src="https://blackrockdigital.github.io/startbootstrap-simple-sidebar/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script>

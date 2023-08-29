@@ -49,6 +49,11 @@
 		{% if housekeepingManager.hasPermission(playerDetails.getRank(), 'catalogue/edit_frontpage') %}
 		<a href="{{ site.sitePath }}/{{ site.housekeepingPath }}/catalogue/edit_frontpage" class="list-group-item list-group-item-action {{ editCatalogueFrontPage }}">Catalogue Frontpage</a>
 		{% endif %}
+
+    {% if housekeepingManager.hasPermission(playerDetails.getRank(), 'transaction/lookup') %}
+        <a href="{{ site.sitePath }}/{{ site.housekeepingPath }}/transaction/lookup" class="list-group-item list-group-item-action {{ searchTransactionsActive }}">Transaction Lookup</a>
+		{% endif %}
+
       </div>
     </div>
     <div id="page-content-wrapper">
@@ -64,9 +69,6 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link {{ creditsVouchersActive }}" href="{{ site.sitePath }}/{{ site.housekeepingPath }}/vouchers">Voucher management</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link {{ creditsTransactionsActive }}" href="{{ site.sitePath }}/{{ site.housekeepingPath }}/transaction/lookup">Transaction Logs</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Give Credits / Pixels</a>

@@ -1,5 +1,7 @@
 package org.alexdev.http.controllers.housekeeping;
 
+import java.util.Random;
+
 import org.alexdev.duckhttpd.server.connection.WebConnection;
 import org.alexdev.duckhttpd.template.Template;
 import org.alexdev.havana.dao.mysql.VoucherDao;
@@ -47,6 +49,21 @@ public class HousekeepingCreditsController {
             return;
         }
 
+        // Random voucher code generation for ease of use
+        int leftLimit = 48; // numeral '0'
+        int rightLimit = 122; // letter 'z'
+        int targetStringLength = 8;
+        Random random = new Random();
+
+        String initialVoucher = random.ints(leftLimit, rightLimit + 1)
+            .filter(i -> (i <= 57 || i >= 65) && (i <= 90 || i >= 97))
+            .limit(targetStringLength)
+            .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
+            .toString();
+
+        tpl.set("pageName", "Voucher Management");
+        tpl.set("initialVoucher", initialVoucher);
+
         if (client.post().queries().size() > 0) {
             String[] fieldCheck = new String[]{"amount", "voucherCode"};
 
@@ -68,12 +85,11 @@ public class HousekeepingCreditsController {
             int amount = client.post().getInt("amount");
 
             VoucherDao.createVoucher(voucherCode, amount);
+            client.session().set("alertColour", "success");
+            client.session().set("alertMessage", "Voucher created successfully!");
+            tpl.render();
         }
-
-        int initialVoucher = 24;
-
-        tpl.set("pageName", "Voucher Management");
-        tpl.set("initialVoucher", initialVoucher);
+        
         tpl.render();
 
         // Delete alert after it's been rendered
