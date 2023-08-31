@@ -1,5 +1,6 @@
 {% include "housekeeping/base/header.tpl" %}
   <body>
+  	{% set usersAndModerationActive = " active " %}
     {% set bansActive = " active" %}
 	{% include "housekeeping/base/navigation.tpl" %}
      <h1 class="mt-4">View and manage bans</h1>

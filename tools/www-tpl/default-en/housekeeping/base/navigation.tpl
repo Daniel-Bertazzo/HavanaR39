@@ -7,9 +7,7 @@
         <a href="{{ site.sitePath }}/{{ site.housekeepingPath }}/configurations" class="list-group-item list-group-item-action {{ configurationsActive }}">Configurations</a>
 		{% endif %}
 		
-	    {% if housekeepingManager.hasPermission(playerDetails.getRank(), 'bans') %}
-        <a href="{{ site.sitePath }}/{{ site.housekeepingPath }}/bans" class="list-group-item list-group-item-action {{ bansActive }}">Ban Management</a>
-		{% endif %}
+	    
 		
 		{% if housekeepingManager.hasPermission(playerDetails.getRank(), 'room_ads') %}
         <a href="{{ site.sitePath }}/{{ site.housekeepingPath }}/room_ads" class="list-group-item list-group-item-action {{ roomAdsActive }}">Room Advertisements</a>
@@ -36,23 +34,17 @@
         <a href="{{ site.sitePath }}/{{ site.housekeepingPath }}/articles" class="list-group-item list-group-item-action {{ articlesActive }}">News Articles</a>
 		    <a href="{{ site.sitePath }}/{{ site.housekeepingPath }}/articles/create" class="list-group-item list-group-item-action {{ createArticlesActive }}">Post News Article</a>
 		{% endif %}
-		
-		{% if housekeepingManager.hasPermission(playerDetails.getRank(), 'user/create') %}
-        <a href="{{ site.sitePath }}/{{ site.housekeepingPath }}/users/search" class="list-group-item list-group-item-action {{ searchUsersActive }}">Search Users</a>
-		    <a href="{{ site.sitePath }}/{{ site.housekeepingPath }}/users/create" class="list-group-item list-group-item-action {{ createUserActive }}">Create New User</a>
-		{% endif %}
 
-    {% if housekeepingManager.hasPermission(playerDetails.getRank(), 'credits') %}
+    <!--{% if housekeepingManager.hasPermission(playerDetails.getRank(), 'credits') %} -->
         <a href="{{ site.sitePath }}/{{ site.housekeepingPath }}/credits" class="list-group-item list-group-item-action {{ creditsActive }}">Credits</a>
-		{% endif %}
+		<!--{% endif %}-->
 		
 		{% if housekeepingManager.hasPermission(playerDetails.getRank(), 'catalogue/edit_frontpage') %}
-		<a href="{{ site.sitePath }}/{{ site.housekeepingPath }}/catalogue/edit_frontpage" class="list-group-item list-group-item-action {{ editCatalogueFrontPage }}">Catalogue Frontpage</a>
+		  <a href="{{ site.sitePath }}/{{ site.housekeepingPath }}/catalogue/edit_frontpage" class="list-group-item list-group-item-action {{ editCatalogueFrontPage }}">Catalogue Frontpage</a>
 		{% endif %}
 
-    {% if housekeepingManager.hasPermission(playerDetails.getRank(), 'transaction/lookup') %}
-        <a href="{{ site.sitePath }}/{{ site.housekeepingPath }}/transaction/lookup" class="list-group-item list-group-item-action {{ searchTransactionsActive }}">Transaction Lookup</a>
-		{% endif %}
+    <a href="{{ site.sitePath }}/{{ site.housekeepingPath }}/users_and_moderation" class="list-group-item list-group-item-action {{ usersAndModerationActive }}">Users and moderation</a>
+    
 
       </div>
     </div>
@@ -71,11 +63,31 @@
                 <a class="nav-link {{ creditsVouchersActive }}" href="{{ site.sitePath }}/{{ site.housekeepingPath }}/vouchers">Voucher management</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Give Credits / Pixels</a>
+                <a class="nav-link" href="#">Give Credits / Pixels (TODO)</a>
               </li>
             </ul>
         {% endif %}
       
+        {% if usersAndModerationActive %}
+          <ul class="nav nav-pills">
+            <li class="nav-item">
+              <a class="nav-link {{ usersAndModerationMainActive }}" href="{{ site.sitePath }}/{{ site.housekeepingPath }}/users_and_moderation">Users and Moderation</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {{ bansActive }}" href="{{ site.sitePath }}/{{ site.housekeepingPath }}/bans">Ban Management</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {{ searchUsersActive }}" href="{{ site.sitePath }}/{{ site.housekeepingPath }}/users/search">Search Users</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {{ createUserActive }}" href="{{ site.sitePath }}/{{ site.housekeepingPath }}/users/create">Create New User</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {{ searchTransactionsActive }}" href="{{ site.sitePath }}/{{ site.housekeepingPath }}/transaction/lookup">Transaction Logs</a>
+            </li>
+          </ul>
+        {% endif %}
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
             <li class="nav-item active">

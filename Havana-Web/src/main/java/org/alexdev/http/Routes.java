@@ -346,5 +346,7 @@ public class Routes {
         RouteManager.addRoute("/" + HOUSEKEEPING_PATH + "/catalogue/edit_frontpage", HousekeepingCatalogueFrontpageController::edit);
         RouteManager.addRoute("/" + HOUSEKEEPING_PATH + "/credits", HousekeepingCreditsController::credits);
         RouteManager.addRoute("/" + HOUSEKEEPING_PATH + "/vouchers", HousekeepingCreditsController::vouchers);
+        RouteManager.addRoute("/" + HOUSEKEEPING_PATH + "/users_and_moderation", HousekeepingModerationController::usersAndModeration);
+        
     }
 }

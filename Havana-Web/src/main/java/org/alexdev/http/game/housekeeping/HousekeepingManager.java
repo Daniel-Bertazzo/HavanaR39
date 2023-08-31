@@ -41,6 +41,8 @@ public class HousekeepingManager {
         this.permissions.put("badges", PlayerRank.COMMUNITY_MANAGER);
         this.permissions.put("credits", PlayerRank.COMMUNITY_MANAGER);
         this.permissions.put("vouchers", PlayerRank.COMMUNITY_MANAGER);
+        this.permissions.put("users_and_moderation", PlayerRank.MODERATOR);
+           
     }
 
     /**

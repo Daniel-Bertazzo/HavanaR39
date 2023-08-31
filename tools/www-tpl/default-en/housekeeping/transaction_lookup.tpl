@@ -1,5 +1,6 @@
 {% include "housekeeping/base/header.tpl" %}
   <body>
+    {% set usersAndModerationActive = " active " %}
     {% set searchTransactionsActive = " active " %}
 	{% include "housekeeping/base/navigation.tpl" %}
      <h1 class="mt-4">Transaction Lookup</h1>

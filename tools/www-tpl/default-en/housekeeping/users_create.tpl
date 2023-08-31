@@ -1,5 +1,6 @@
 {% include "housekeeping/base/header.tpl" %}
   <body>
+  	{% set usersAndModerationActive = " active " %}
     {% set createUserActive = " active " %}
 	{% include "housekeeping/base/navigation.tpl" %}
      <h1 class="mt-4">Create User</h1>

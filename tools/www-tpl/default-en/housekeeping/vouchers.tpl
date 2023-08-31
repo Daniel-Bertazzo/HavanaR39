@@ -16,7 +16,7 @@
 				<label for="searchFor">Voucher Code</label>
 				<input type="text" name="voucherCode" class="form-control" id="voucherCode" value="{{initialVoucher}}" maxlength="100">
 			</div>
-			<button type="submit" class="btn btn-success">Create Voucher</button>
+			<button type="submit" class="btn btn-primary">Create Voucher</button>
 		</form>
 		<br>
 		<hr />
